@@ -1,0 +1,40 @@
+#include <iostream>
+#include<string>
+
+using namespace std;
+class Person {
+    string name;
+    public:
+    void read() {
+        cout<<"Enter name: ";
+        cin>>name;
+    }
+    void display() {
+        cout<<"Name: "<<name<<endl;
+    }
+};
+class Sport: public Person{
+    int m=50;
+    public:
+    void display() {
+        Person::display();
+        cout<<"Sport value: "<<m<<endl;
+    }
+};
+class Student:public Person {
+    int n=100;
+    public:
+        void display(){
+            Person::display();
+            cout<<"Student value: "<<n<<endl;
+        }
+};
+int main(){
+    Sport sp;
+    Student st;
+    sp.read();
+    sp.display();
+    st.read();
+    st.display();
+    return 0;
+}
